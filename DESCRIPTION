@@ -1,0 +1,24 @@
+Package: zzinflationR
+Title: Zero zero-inflation in R
+Version: 0.0.0.9000
+Authors@R: person('Kasper Thystrup', 'Karstensen', email = 'kathka@gmail.com', role = c('cre', 'aut'))
+Description: A very small project (perhabs future R package one day) that aims to easily dispose of zero-inflation samples. Input data are gene (or Transcript) count tables, generated from RNA sequencing data.
+License: GPL-3
+Imports: 
+    config (>= 0.3),
+    golem (>= 0.3.0),
+    shiny (>= 1.5.0),
+    processx,
+    attempt,
+    DT,
+    glue,
+    htmltools
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+URL: https://github.com/KasperThystrup/zzinflationR
+BugReports: https://github.com/KasperThystrup/zzinflationR/issues
+Suggests: 
+    testthat,
+    spelling
+Language: en-US
