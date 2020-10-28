@@ -1,3 +1,4 @@
+#' @export
 toTsv <- function(
   data,
   path,
