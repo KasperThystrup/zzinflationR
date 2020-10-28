@@ -6,9 +6,8 @@
 #' @param silent logical to ignore system warnings.
 #'
 #' @return
+#' 
 #' @export
-#'
-#' @examples
 trimCounts <- function(
   data,
   threshold,

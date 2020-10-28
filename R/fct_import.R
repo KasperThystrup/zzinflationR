@@ -11,22 +11,25 @@
 #' @return
 #' A data.frame consisting of ID by rownames and count values by columns.
 #' Each column are named after the filename, without their file extensions.
+#' 
+#' @importFrom tools file_path_sans_ext
+#' @importFrom readr read_tsv
+#' @importFrom plyr join_all
+#' @importFrom tibble column_to_rownames
 #' @export
-#'
-#' @examples
 importCounts <- function(
   count_files,
   skip = 0
 ) {
   counts <- lapply(count_files, function(f) {
     name <- basename(f) %>%
-      tools::file_path_sans_ext(x = .)
+      file_path_sans_ext(x = .)
     
     cols <- c("ID", name)
     
-    readr::read_tsv(file = f, col_names = cols, col_types = "cd", na = "0", skip = skip)
+    read_tsv(file = f, col_names = cols, col_types = "cd", na = "0", skip = skip)
   })
   
-  plyr::join_all(dfs = counts, by = "ID") %>%
-    tibble::column_to_rownames("ID")
+  join_all(dfs = counts, by = "ID") %>%
+    column_to_rownames("ID")
 }
